@@ -1,0 +1,36 @@
+We start with a = 6 and b = 9.
+
+The algorithm checks that neither a nor b is 0, so it proceeds with the algorithm.
+
+The first loop right-shifts both a and b (dividing by 2) while both are even. In this case, both 6 and 9 are not even, so the loop doesn't run.
+
+The next loop right-shifts a until it becomes odd, which is the case when a becomes 3.
+
+Then, we enter the main loop where the algorithm repeatedly right-shifts b until it becomes odd (in this example, b becomes 9 >> 1 = 4, then 2, then 1). The algorithm checks which number is greater and swaps them if necessary, but in this case, a is smaller, so it doesn't swap.
+
+The algorithm then calculates the new b as b - a, which becomes 9 - 3 = 6.
+
+Steps 5 and 6 are repeated until b becomes 0. The GCD is the final value of a, which is 3.
+
+
+
+We start with a = 6 and b = 9.
+
+The function checks if a is equal to 0, which is not the case in our example, so we proceed with the else block.
+
+Inside the else block, we recursively call extended_gcd(b % a, a). In this call, b % a is equivalent to 9 % 6, which results in 3, and a becomes 6.
+
+We continue the recursive calls until a becomes 0. In our example, it takes two recursive calls. The values of g, x, and y are calculated as follows:
+
+First recursive call: extended_gcd(3, 6) returns (3, 0, 1). In this case, x = 0 and y = 1.
+
+Second recursive call: extended_gcd(6 % 3, 3) returns (3, 1, 0). In this case, x = 1 and y = 0.
+
+The function then returns the GCD (which is 3 in our case) and the Bézout coefficients x and y. These coefficients allow us to express the GCD as a linear combination of a and b. In this example, 3 = 0 * 6 + 1 * 9, so the Bézout coefficients are x = 0 and y = 1.
+
+So, the GCD of 6 and 9 is 3, and the Bézout coefficients are x = 0 and y = 1.
+
+
+
+
+
